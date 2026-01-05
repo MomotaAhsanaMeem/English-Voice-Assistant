@@ -15,7 +15,7 @@ This is a Python-based voice assistant that speaks and understands English using
 
 1.  Navigate to the agent directory:
     ```bash
-    cd Bangla-Voice-Assistant
+    cd English-Voice-Assistant
     ```
 
 2.  Install dependencies:

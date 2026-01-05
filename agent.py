@@ -38,9 +38,9 @@ async def entrypoint(ctx: JobContext):
     session = AgentSession(
         vad=ctx.proc.userdata["vad"],
         stt = LocalEnglishSpeechSTT(
-            api_url="https://88a06ccbe8e9fdd60e.gradio.live",
+            api_url="https://d79ddf2d47a05d98d8.gradio.live/",
             username="deepthinkers",
-            password="bangla2025",
+            password="english2025",
             timeout=30,  # Optional: request timeout
             max_retries=3  # Optional: retry attempts
         ),

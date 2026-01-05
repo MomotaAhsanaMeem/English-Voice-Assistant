@@ -24,9 +24,9 @@ class LocalEnglishSpeechSTT(stt.STT):
     
     def __init__(
         self,
-        api_url: str = "https://88a06ccbe8e9fdd60e.gradio.live",
+        api_url: str = "https://d79ddf2d47a05d98d8.gradio.live/",
         username: str = "deepthinkers",
-        password: str = "bangla2025",
+        password: str = "english2025",
         language: str = "en",
         timeout: int = 30,
         max_retries: int = 3,
@@ -150,13 +150,19 @@ class LocalEnglishSpeechSTT(stt.STT):
                 file_input = handle_file(wav_path)
                 
                 # Use gradio_client - it handles all the API complexity!
+                # result = await asyncio.to_thread(
+                #     self._client.predict,
+                #     file_input,
+                #     self._apply_correction,  # Pass grammar correction flag
+                #     api_name="/transcribe"
+                # )
+                
                 result = await asyncio.to_thread(
                     self._client.predict,
                     file_input,
-                    self._apply_correction,  # Pass grammar correction flag
-                    api_name="/transcribe"
+                    self._apply_correction  # Pass grammar correction flag
                 )
-                
+
                 logger.info(f"Transcription received: '{result}'")
                 return result if result else ""
                 
